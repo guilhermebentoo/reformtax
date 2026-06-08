@@ -269,12 +269,14 @@ button, input, select, textarea { font-family: inherit; }
   background: linear-gradient(to top, rgba(11,11,26,.96) 0%, rgba(11,11,26,.45) 50%, rgba(11,11,26,.1) 100%);
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 28px 26px 24px;
+  align-items: flex-start;
 }
-.hero-main-overlay .tag { margin-bottom: 10px; }
+.hero-main-overlay .tag { margin-bottom: 10px; align-self: flex-start; }
 .hero-title {
   font-family: var(--font-serif);
   font-size: 26px; font-weight: 900; line-height: 1.3;
   color: var(--white); margin-bottom: 10px;
+  align-self: stretch;
 }
 .hero-title a { color: var(--white); }
 .hero-title a:hover { color: var(--gold-light); }
@@ -282,21 +284,25 @@ button, input, select, textarea { font-family: inherit; }
   font-size: 13.5px; color: rgba(233,233,233,.75);
   line-height: 1.6; margin-bottom: 12px;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  align-self: stretch;
 }
 .hero-meta {
   display: flex; gap: 14px; font-size: 11.5px;
   color: rgba(233,233,233,.5); align-items: center;
+  align-self: flex-start;
 }
 .hero-meta-dot { width: 3px; height: 3px; background: var(--gold); border-radius: 50%; }
 
-/* Hero sidebar */
+/* Hero sidebar — mesma altura do hero-main, 4 itens distribuídos */
 .hero-side {
   background: var(--navy-card);
   border: 1px solid var(--navy-border);
   border-radius: var(--r-lg); overflow: hidden;
+  height: 420px;
+  display: flex; flex-direction: column;
 }
 .hero-side-header {
-  padding: 11px 16px;
+  padding: 11px 16px; flex-shrink: 0;
   font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
   text-transform: uppercase; color: var(--gold);
   border-bottom: 1px solid var(--navy-border);
@@ -306,6 +312,7 @@ button, input, select, textarea { font-family: inherit; }
   display: flex; gap: 12px; padding: 12px 14px;
   border-bottom: 1px solid var(--navy-border);
   transition: background var(--t);
+  flex: 1; align-items: center;
 }
 .hero-side-item:last-child { border-bottom: none; }
 .hero-side-item:hover { background: rgba(200,168,75,.06); }

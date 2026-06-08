@@ -6,7 +6,7 @@
         <?php
         $hero_query = new WP_Query(['posts_per_page' => 6, 'post_status' => 'publish']);
         $hero_post  = $hero_query->posts[0] ?? null;
-        $side_posts = array_slice($hero_query->posts ?? [], 1, 5);
+        $side_posts = array_slice($hero_query->posts ?? [], 1, 4); // exatamente 4 itens
         ?>
 
         <div class="hero-grid">
